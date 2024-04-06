@@ -4,7 +4,7 @@ import EventSourcing from "./EventSourcing"
 
 function App() {
     return (
-        <div>
+        <div class="app">
             <EventSourcing />
         </div>
     )

@@ -14,15 +14,17 @@ export function AdminPanel() {
 
     return (
         <div>
-            <h2>Административная панель</h2>
+            <h2>Admin panel</h2>
             <div>
                 <button onClick={() => sendNotification("info")}>
-                    Отправить информационное уведомление
+                    This is an info message from admin panel.
                 </button>
                 <button onClick={() => sendNotification("warning")}>
-                    Отправить предупреждение
+                    This is a warning message from admin panel.
                 </button>
-                <button onClick={() => sendNotification("error")}>Отправить ошибку</button>
+                <button onClick={() => sendNotification("error")}>
+                    This is an error message from admin panel.
+                </button>
             </div>
         </div>
     )

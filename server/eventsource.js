@@ -27,14 +27,15 @@ app.get("/connect", (req, res) => {
 })
 
 app.post("/new-messages", (req, res) => {
-    const message = req.body
+    const message = { ...req.body, id: Date.now() }
     emitter.emit("newMessage", message)
     res.status(204).end()
 })
 
 app.post("/trigger-notification", (req, res) => {
     const { type } = req.body
-    const message = { type, message: `Уведомление типа "${type}" отправлено.` }
+    const text = type.slice(0, 1).toUpperCase() + type.slice(1)
+    const message = { type, message: `${text} message from admin panel.`, id: Date.now() }
     emitter.emit("newMessage", message)
     res.status(204).end()
 })
